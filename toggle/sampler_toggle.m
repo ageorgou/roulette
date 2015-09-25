@@ -1,6 +1,6 @@
 function parSamples = sampler_toggle(nSamples,obs,reactions,outputFolder)
-%SAMPLER Summary of this function goes here
-%   Detailed explanation goes here
+%SAMPLER_TOGGLE Gibbs sampler with Russian Roulette truncation for the
+%genetic toggle switch example.
 
 global PRINT_EVERY SAVE_EVERY;
 
@@ -249,11 +249,6 @@ jumps = diff(states);
 [~,rInd] = myIsMember(jumps,updates);
 end
 
-function rates = ratesFromState(start,generator)
-
-rates = sum(generator(start,[1:start-1 start+1:end]));
-
-end
 
 function deb(msg,args)
 % Print debugging message (uncomment when debugging)

@@ -1,4 +1,5 @@
 function [I,loc] = myIsMember(A,B)
+%MYISMEMBER Alternative to ISMEMBER(A,B,'rows')
 
 dim = size(A,2);
 

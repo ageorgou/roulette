@@ -1,5 +1,4 @@
 function [stateIDs,found] = encodeStates(stateVectors,lookup)
-
 % ENCODESTATES Transform a sequence of state vectors to their respective
 % IDs.
 %

@@ -1,8 +1,6 @@
 function Q = makeGeneratorRest(states,updates,rates,pars)
-
 % MAKEGENERATORREST Create a sparse generator matrix for a given system,
 % including an absorbing state.
-
 %
 % makeGenerator(states,updates,rates) returns a sparse matrix Q that
 % represents the infinitesimal generator matrix for a system. states is the

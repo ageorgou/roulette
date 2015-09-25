@@ -1,6 +1,5 @@
 function parSamples = sampler(nSamples, obs, reactions)
-%SAMPLER Summary of this function goes here
-%   Detailed explanation goes here
+%SAMPLER Gibbs sampler with Russian-Roulette style truncation
 
 global PRINT_EVERY
 
@@ -76,7 +75,6 @@ for nS = 1:nSamples
             deb('Calculating oldNew');
             [succ,probOldNew,~] = ... % oldS, new statespace
                 FFBS_noisy(newGen,oldTimes,initState,obs,newSpace,oldReenc);
-                %FFBS(newGen,oldTimes,initState,obs,newSpace,oldReenc);
         end
     else
         probOldNew = 0;
@@ -91,7 +89,6 @@ for nS = 1:nSamples
             deb('Calculating newOld');
             [succ,probNewOld,~] = ... % newS, old statespace
                 FFBS_noisy(oldGen,newTimes,initState,obs,oldSpace,newReenc);
-                %FFBS(oldGen,newTimes,initState,obs,oldSpace,newReenc);
         end
     else
         probNewOld = 0;
@@ -103,7 +100,6 @@ for nS = 1:nSamples
         deb('Calculating oldOld');
         [succ,probOldOld,~] = ... 
             FFBS_noisy(oldGen,oldTimes,initState,obs,oldSpace,oldTrace);
-            %FFBS(oldGen,oldTimes,initState,obs,oldSpace,oldTrace);
     end
     
     deb('Calculated probabilities (%d)',nS);
@@ -216,7 +212,9 @@ end
 end
 
 function s = sampleGamma(a,b)
-% Sample a number from a Gamma distribution with shape a and rate b
+% Sample numbers from Gamma distributions with shapes a and rates b.
+% Remember that MATLAB uses shape and scale (= 1/rate), so we adjust the
+% arguments accordingly.
 s = gamrnd(a, 1 ./ b);
 end
 

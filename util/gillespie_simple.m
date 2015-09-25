@@ -1,4 +1,14 @@
 function trace = gillespie_simple(reactions,initState,stopTime)
+% GILLESPIE_SIMPLE Gillespie's Stochastic Simulation Algorithm.
+%   GILLESPIE_SIMPLE(R,S,T) takes a structure of reactions R, an initial
+%   state vector S and a final time T, and returns a sample trajectory from
+%   the system defined in R. Each reaction must have two fields: "update",
+%   a row vector containing the jump vector of the reaction; and
+%   "rateFunc", a function handle representing its rate law as a function
+%   of the state. S must be a row vector and its length N must match that
+%   of the jump vectors. The output is a matrix with N+1 columns, where the
+%   first column holds the jump times and the others hold the target state
+%   vectors.
 
 rateFuncs = {reactions.rateFunc};
 

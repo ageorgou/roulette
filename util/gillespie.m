@@ -1,4 +1,10 @@
 function trace = gillespie(generator,initState,stopTime)
+%GILLESPIE Implementation of Gillespie's Stochastic Simulation Algorithm.
+%   GILLESPIE(Q,S,T) takes an NxN generator matrix Q, an initial state id S
+%   and a final time T, and returns a sample trajectory from the system
+%   defined in R. S must be an integer between 1 and N. The output is a
+%   matrix with 2 columns, where the first holds the jump times and the
+%   second encodes the id's of the target states.
 
 time = 0;
 stateID = initState;

@@ -1,5 +1,4 @@
 function stateVectors = decodeStates(stateIDs,lookup)
-
 % DECODESTATES Transform a sequence of state IDs to their respective
 % vectors.
 %
