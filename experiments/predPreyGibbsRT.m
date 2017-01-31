@@ -8,7 +8,7 @@
 addpath('../util'); % for helper functions
 addpath('../sampler'); % for the samplers
 
-obs = load('../obsPredPreyRT_true'); % observation file
+obs = load('obsPredPreyRT_true'); % observation file
 
 % First, the jump or update vector for each reaction:
 updates = [+1 0; -1 0; 0 +1; 0 -1];

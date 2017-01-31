@@ -1,6 +1,6 @@
 # roulette
 
-This is a MATLAB implementation of parameter sampling methods for Markov Jump Processes (aka Continuous Time Markov Chains), using random truncations of the state-space. The method used to truncate the space is called Russian Roulette.
+This is a MATLAB implementation of parameter sampling methods for Markov Jump Processes (aka Continuous Time Markov Chains), using random truncations of the state-space. The method used to truncate the space is called Russian Roulette. The methods are described in the paper [Unbiased Bayesian inference for population Markov jump processes via random truncations](http://link.springer.com/article/10.1007/s11222-016-9667-9).
 
 The experiments folder contains sample files on how to call the sampler, and examples of model descriptions and observation files. More detailed instructions can be found in experiments/predPreyGibbsRT.m.
 
